@@ -5,16 +5,16 @@ export interface SaveFileUseCase {
 
 interface SaveFileOptions {
     fileContent: string;
-    fileDestination: string;
-    fileName: string;
+    fileDestination?: string;
+    fileName?: string;
 }
 
 export class SaveFile implements SaveFileUseCase {
     constructor() { }
     execute({
         fileContent,
-        fileDestination,
-        fileName
+        fileDestination = 'outputs',
+        fileName = 'table'
     }: SaveFileOptions): boolean {
         try {
             fs.mkdirSync(fileDestination, { recursive: true });

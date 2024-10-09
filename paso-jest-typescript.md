@@ -27,3 +27,8 @@ testEnvironment: "jest-environment-node",
 "test:watch": "jest --watch",
 "test:coverage": "jest --coverage",
 ```
+
+4. para realizar debug de los test
+CTRL SHIFT P
+elegimos debug npm script 
+elecjimos test:watch
