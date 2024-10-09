@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { yarg } from './config/plugins/yargs.plugin';
 
-const { b:base, l:limit, s:show } = yarg
+const { b:base, l:limit, s:showTable } = yarg
 
 
 let outPutMessage: string = '';
@@ -17,7 +17,7 @@ for (let i = 1; i <= limit; i++) {
 }
 
 outPutMessage += headerMessage + outPutMessage;
-if (show) console.log(outPutMessage);
+if (showTable) console.log(outPutMessage);
 
 const outputPath = `outputs/`
 // la recusividad es por si el directorio tiene otras carptetas para crear ejemplo outputs/folder1/folder2/folder3

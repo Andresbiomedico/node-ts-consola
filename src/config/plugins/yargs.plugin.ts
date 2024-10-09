@@ -38,8 +38,10 @@ export const yarg = yargs(hideBin(process.argv))
         describe:'File destination'
     })
     
-    .check((argv) => {
-        if (argv.b < 1 ) throw 'Error: base debe ser mayor  1'
+    .check((argv,options) => {
+        if (argv.b < 1 ) throw 'Error: base must be greater than 0'
         return true
     })
     .parseSync()
+
+    //El check sirve para realizar validaciones de la entrada de los valores en este caso es q no sea negativo
